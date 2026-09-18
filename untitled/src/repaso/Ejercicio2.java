@@ -1,4 +1,4 @@
 package repaso;
 
-public class Ejercicio2 {
+public class ejercicio2 {
 }
