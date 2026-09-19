@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ejercicio1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int nota1=-1;
+        int nota1;
         int nota2;
         int nota3;
         do {
