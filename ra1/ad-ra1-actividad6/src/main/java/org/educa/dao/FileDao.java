@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface FileDao {
     boolean createFile(String path);
-
     String addData(List<FileEntity> filesEntitys);
     String displayFile(String path);
 }
