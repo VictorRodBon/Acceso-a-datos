@@ -32,7 +32,7 @@ public class FileService {
         File file=fileEntity.getFile();
 
         // almacenamos tipo
-        fileEntity.setType(file.isDirectory() ? "Directorio" : "Fichero");
+        fileEntity.setType(file.isDirectory() ? "D" : "F");
 
         // almacenamos permisos
         StringBuilder perm = new StringBuilder();
@@ -51,26 +51,24 @@ public class FileService {
         StringBuilder dirs= new StringBuilder();
 
         for (FileEntity file : filesEntitys){
-            if (file.getType()=="Directorio"){
-                dirs.append(file.getName()).append(";").append(file.getType()).append(";").append(file.getPermissions()).append(";").append(file.getSize()).append(BREAK_LINE);
-            }else{
+            if (file.getFile().isFile()){
                 files.append(file.getName()).append(";").append(file.getType()).append(";").append(file.getPermissions()).append(";").append(file.getSize()).append(BREAK_LINE);
+                System.out.println("file");
+            }else{
+                dirs.append(file.getName()).append(";").append(file.getType()).append(";").append(file.getPermissions()).append(";").append(file.getSize()).append(BREAK_LINE);
             }
         }
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/home/alumnotd/victor/directorios.txt"), StandardCharsets.ISO_8859_1))) {
-            bw.write(files.toString());
+            bw.write(dirs.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/home/alumnotd/victor/ficheros.txt"), StandardCharsets.ISO_8859_1))) {
             bw.write(files.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
-
-
 }
