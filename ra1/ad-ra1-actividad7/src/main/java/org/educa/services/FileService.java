@@ -14,7 +14,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class FileService {
-    private final FileDao FileDao = new FileDaoImpl();
+    private final FileDao fileDao = new FileDaoImpl();
 
     private final String BREAK_LINE="\n";
 
@@ -53,22 +53,14 @@ public class FileService {
         for (FileEntity file : filesEntitys){
             if (file.getFile().isFile()){
                 files.append(file.getName()).append(";").append(file.getType()).append(";").append(file.getPermissions()).append(";").append(file.getSize()).append(BREAK_LINE);
-                System.out.println("file");
             }else{
                 dirs.append(file.getName()).append(";").append(file.getType()).append(";").append(file.getPermissions()).append(";").append(file.getSize()).append(BREAK_LINE);
             }
         }
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/home/alumnotd/victor/directorios.txt"), StandardCharsets.ISO_8859_1))) {
-            bw.write(dirs.toString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        fileDao.addData(files.toString(), "/home/alumnotd/victor/ficheros.txt");
+        fileDao.addData(dirs.toString(), "/home/alumnotd/victor/dirs.txt");
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/home/alumnotd/victor/ficheros.txt"), StandardCharsets.ISO_8859_1))) {
-            bw.write(files.toString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 }

@@ -4,6 +4,7 @@ import org.educa.dao.FileDao;
 import org.educa.entity.FileEntity;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class FileDaoImpl implements FileDao {
@@ -21,15 +22,8 @@ public class FileDaoImpl implements FileDao {
     }
 
     @Override
-    public String addData(List<FileEntity> filesEntitys) {
-        StringBuilder data = new StringBuilder();
-        for (FileEntity f : filesEntitys){
-            data.append(f.getName()).append(";")
-                    .append(f.getType()).append(";")
-                    .append(f.getPermissions()).append(";")
-                    .append(f.getSize()).append(BREAKLINE);
-        }
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(PATH),false))){
+    public String addData(String data, String path) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(path), StandardCharsets.ISO_8859_1))) {
             bw.write(data.toString());
             return "datos añadidos al fichero con éxito";
         }catch (IOException e){
