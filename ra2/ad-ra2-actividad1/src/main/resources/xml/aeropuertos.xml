@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aeropuertos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="../xsd/aeropuertos.xsd">
+    <aeropuerto>
+        <iata>AGP</iata>
+        <nombre>Costa del Sol</nombre>
+        <ciudad>Málaga</ciudad>
+        <pais>España</pais>
+        <tasa>1200</tasa>
+    </aeropuerto>
+    <aeropuerto>
+        <iata>VLC</iata>
+        <nombre>Manises</nombre>
+        <ciudad>Valencia</ciudad>
+        <pais>España</pais>
+        <tasa>980</tasa>
+    </aeropuerto>
+    <aeropuerto>
+        <iata>LIS</iata>
+        <nombre>Humberto Delgado</nombre>
+        <ciudad>Lisboa</ciudad>
+        <pais>Portugal</pais>
+        <tasa>1300</tasa>
+    </aeropuerto>
+    <aeropuerto>
+        <iata>AMS</iata>
+        <nombre>Schiphol</nombre>
+        <ciudad>Ámsterdam</ciudad>
+        <pais>Países Bajos</pais>
+        <tasa>1600</tasa>
+    </aeropuerto>
+    <aeropuerto>
+        <iata>FRA</iata>
+        <nombre>Frankfurt am Main</nombre>
+        <ciudad>Fráncfort</ciudad>
+        <pais>Alemania</pais>
+        <tasa>2200</tasa>
+    </aeropuerto>
+</aeropuertos>
