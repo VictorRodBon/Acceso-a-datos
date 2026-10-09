@@ -1,12 +1,12 @@
 package org.educa.service;
 
-import org.educa.dao.DaoImpl;
+import org.educa.dao.DaoImplBillete;
 import org.educa.dao.DaoInterface;
 
 import java.sql.SQLException;
 
 public class BilleteService {
-    DaoInterface dao = new DaoImpl();
+    DaoInterface dao = new DaoImplBillete();
     public int actualizarPreciosBilleteAeropuerto(String city) throws SQLException {
 
 

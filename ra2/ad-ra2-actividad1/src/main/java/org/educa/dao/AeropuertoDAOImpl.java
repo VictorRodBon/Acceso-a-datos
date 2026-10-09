@@ -23,12 +23,16 @@ public class AeropuertoDAOImpl implements AeropuertoDAO {
 
     @Override
     public int insertAll(Aeropuertos aeropuertos) throws SQLException {
+        try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
+            return inertAll(aeropuertos, connection);
+        }
+    }
 
+    private static int inertAll(Aeropuertos aeropuertos, Connection connection) throws SQLException {
         String sql = "INSERT INTO Aeropuertos (cod_iata, nombre, ciudad, pais, tasa_aero) " +
                 "VALUES (?,?,?,?,?)";
-
-        try (Connection connection = ConnectionPool.getDataSource().getConnection();
-             PreparedStatement ps = connection.prepareStatement(sql)) {
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            connection.setAutoCommit(false);
 
             int contador = 0;
             for (Aeropuerto aeropuerto : aeropuertos.getAeropuerto()) {
@@ -41,7 +45,12 @@ public class AeropuertoDAOImpl implements AeropuertoDAO {
                 contador = contador + ps.executeUpdate();
             }
 
+            connection.commit();
+
             return contador;
+        } catch (Exception e) {
+            connection.rollback();
+            throw e;
         }
     }
 }

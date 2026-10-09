@@ -10,7 +10,7 @@ public class Main {
         BilleteService billeteService = new BilleteService();
 
         try {
-            System.out.println(billeteService.actualizarPreciosBilleteAeropuerto("Sevilla"));
+            billeteService.actualizarPreciosBilleteAeropuerto("Madrid");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
