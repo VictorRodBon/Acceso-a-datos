@@ -1,0 +1,40 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112w"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+b
+java:S11922"GDefine a constant instead of duplicating this literal "Madrid" 4 times.(À‹Š£şÿÿÿÿ
+€
+java:S4144†"dUpdate this method so that its implementation is not identical to "createTownDataClient" on line 54.(¡ÊÆÈûÿÿÿÿ
+:
+java:S2129%"$Remove this "BigInteger" constructor(‹Ë¬Õ
+?
+java:S2129/"$Remove this "BigInteger" constructor(½‡Â”úÿÿÿÿ
+:
+java:S21298"$Remove this "BigInteger" constructor(‹õåÓ
+?
+java:S2129A"$Remove this "BigInteger" constructor(òÀ„ùÿÿÿÿ
+?
+java:S2129B"$Remove this "BigInteger" constructor(ê¥µèøÿÿÿÿ
+?
+java:S2129M"$Remove this "BigInteger" constructor(ç¡œûÿÿÿÿ
+:
+java:S2129O"$Remove this "BigInteger" constructor(”Ù£È
+:
+java:S2129U"$Remove this "BigInteger" constructor(¢ˆ‚Ï
+9
+java:S2129W"$Remove this "BigInteger" constructor(‰öÑ
+:
+java:S2129]"$Remove this "BigInteger" constructor(¶îë
+:
+java:S2129_"$Remove this "BigInteger" constructor(‰ğ†ı
+:
+java:S2129e"$Remove this "BigInteger" constructor(ì‚ãƒ
+:
+java:S2129g"$Remove this "BigInteger" constructor(„îÅ
+;
+java:S2129ˆ"$Remove this "BigInteger" constructor(‹õåÓ
+T
+java:S1128"9Remove this unused import 'jakarta.xml.bind.JAXBContext'.(ŒÔ”íüÿÿÿÿ
+\
+java:S1128
+"ARemove this unused import 'javax.xml.datatype.DatatypeConstants'.(§È·âûÿÿÿÿ

@@ -1,0 +1,23 @@
+git -> gestor de proyectos 
+    -> pryecto 1    -> modificacion dia 1
+                    -> modificacion dia 2
+                    -> modificacion dia 3 X
+                    -> restaurar dia 2
+
+Comandos de git
+    -> git add .
+    -> git commit -m "mensaje"
+    -> git push
+    -> git pull
+    -> git status
+    -> git log
+
+BRANCHES
+    -> git branch
+    -> git checkout
+    -> git merge
+    -> git rebase
+    -> git reset
+
+Clonar un repositorio
+    -> git clone <url>

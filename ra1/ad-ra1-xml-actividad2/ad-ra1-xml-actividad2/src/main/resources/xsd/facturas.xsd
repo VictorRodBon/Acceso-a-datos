@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="factura">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="datos_empresa"/>
+                <xs:element ref="datos_cliente"/>
+                <xs:element ref="datos_factura"/>
+            </xs:sequence>
+            <xs:attribute name="n_fac" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="datos_empresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="nombre"/>
+                <xs:element ref="dir"/>
+                <xs:element ref="poblacion"/>
+                <xs:element ref="provincia"/>
+                <xs:element ref="cif"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="dir" type="xs:string"/>
+    <xs:element name="cif" type="xs:string"/>
+    <xs:element name="datos_cliente">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="nombre"/>
+                <xs:element ref="dir_env"/>
+                <xs:element ref="poblacion"/>
+                <xs:element ref="provincia"/>
+            </xs:sequence>
+            <xs:attribute name="n_cli" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="dir_env" type="xs:string"/>
+    <xs:element name="datos_factura">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="fecha"/>
+                <xs:element maxOccurs="unbounded" ref="linea"/>
+                <xs:element ref="base"/>
+                <xs:element ref="cuota_iva"/>
+                <xs:element ref="total"/>
+            </xs:sequence>
+            <xs:attribute name="f_pago" use="required" type="xs:string"/>
+            <xs:attribute name="iva" use="required" type="xs:integer"/>
+            <xs:attribute name="moneda" use="required" type="xs:string"/>
+            <xs:attribute name="n_ped" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="fecha" type="xs:date"/>
+    <xs:element name="linea">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ref"/>
+                <xs:element ref="desc"/>
+                <xs:element ref="cant"/>
+                <xs:element ref="precio"/>
+                <xs:element ref="importe"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ref" type="xs:string"/>
+    <xs:element name="desc" type="xs:string"/>
+    <xs:element name="cant" type="xs:integer"/>
+    <xs:element name="precio" type="xs:integer"/>
+    <xs:element name="importe" type="xs:decimal"/>
+    <xs:element name="base" type="xs:decimal"/>
+    <xs:element name="cuota_iva" type="xs:decimal"/>
+    <xs:element name="total" type="xs:decimal"/>
+    <xs:element name="nombre" type="xs:string"/>
+    <xs:element name="poblacion">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="cod_postal" use="required" type="xs:integer"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="provincia" type="xs:string"/>
+</xs:schema>
