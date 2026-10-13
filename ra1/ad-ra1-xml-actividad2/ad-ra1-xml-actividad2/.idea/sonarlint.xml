@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="moduleMapping">
+      <map>
+        <entry key="ad-ut1-actividad2" value="ad-ut1-actividad3XML" />
+      </map>
+    </option>
+  </component>
+</project>
