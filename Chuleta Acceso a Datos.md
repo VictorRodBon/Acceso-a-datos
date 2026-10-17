@@ -55,11 +55,11 @@ f.listFiles() // File[] con las referencias de cada fichero
 // Leer fichero de texto
 try(BufferedReader lector = new BufferedReader(new FileReader(String path))){
 	String linea;
-	while((linea = lector.readLine)!=null){
+	while((linea = lector.readLine())!=null){
 		System.out.println(linea);
 	}
 }catch(IOException e){
-	System.err.println(e.getMessage);
+	System.err.println(e.getMessage());
 }
 
 // Escribir fichero de texto
@@ -88,10 +88,60 @@ try{
 try{
     JAXBContext context = JAXBContext.newInstance(clase.class);
     Clase objeto = new Clase(propiedad1, propiedad2);
-    Marshaller marshaller = context.createMarshaller()
+    Marshaller marshaller = context.createMarshaller();
     marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
     marshaller.marshall(objeto, archivoXml);
 }catch(Exception e){
 	System.out.println(e.getMessage);
+}
+```
+
+## Trabajar con BBDD
+```java
+// Crear conexión con base de datos -> pool de conexiones
+try(
+	Connection connection =
+	ConnectionPool.getDataSource().getConnection()
+){
+	// codigo a ejecutar
+}catch(SQLException e){
+	System.err.println(e.getMessage());
+}
+// Crear un preparedStatement
+try(
+	PreparedStatement ps = connection.prepareStatement(sql)
+){ // normalmente se crea en el mismo try que la conexión
+	// codigo a ejecutar
+}catch(SQLException e){
+	System.out.println(e.getMessage);
+}
+
+// Ejecutar un preparedStatement
+// Consulta dinámica/desconocida
+ps.execute(); // -> retorna true si el resultado es un resultSet y false si no es un conjunto de datos (INSERT, UPDATE, DELETE o DDL) usar getUpdateCount() para saber cuántas filas se modificaron
+// Modificar, borrar datos o alterar la estructura de base de datos 
+ps.executeUpdate(); // -> retorna el número de filas afectadas
+// Almacenar una query (select)
+ResultSet rs = ps.executeQuery();
+
+// Recorrer un ResultSet
+while(rs.next){
+	rs.getType() // -> obtener un dato (cambiar type por tipo de dato)
+}
+
+// Crear marcadores de posición (?)
+PreparedStatement ps = connection.prepareStatement("INSERT INTO TABLA (CAMPO1, CAMPO2, CAMPO3) VALUES (?, ?, ?)");
+// Asignar valores a marcadores de posición
+ps.setType(int pos, type valor); // -> cambiar pos por la posición a sustituir (1-n), cambiar type por tipo de dato a introducir
+
+// Transacciones (COMMIT)
+connection.setAutoCommit(false) // -> cancelar el autoCommit
+connection.commit(); // -> confirmar los cambios
+
+// Ejecutar un rollback
+try{
+	connection.rollback();
+}catch(SQLException er){
+	System.err.println(er);
 }
 ```
