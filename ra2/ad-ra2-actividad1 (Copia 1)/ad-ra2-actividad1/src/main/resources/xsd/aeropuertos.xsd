@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definición del elemento raíz que contendrá múltiples aeropuertos -->
+    <xs:element name="aeropuertos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="aeropuerto" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="aeropuerto">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Referencia a un tipo simple personalizado para el IATA -->
+                <xs:element name="iata" type="tipoIATA"/>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="ciudad" type="xs:string"/>
+                <xs:element name="pais" type="xs:string"/>
+                <!-- La tasa debe ser un número entero positivo -->
+                <xs:element name="tasa" type="xs:decimal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Restricción personalizada: El IATA deben ser exactamente 3 letras mayúsculas -->
+    <xs:simpleType name="tipoIATA">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

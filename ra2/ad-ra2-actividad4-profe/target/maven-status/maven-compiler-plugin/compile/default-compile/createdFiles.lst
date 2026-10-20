@@ -1,0 +1,6 @@
+org/educa/dao/ClienteDAOImpl.class
+org/educa/entity/ClienteEntity.class
+org/educa/pool/ConnectionPool.class
+org/educa/dao/ClienteDAO.class
+org/educa/service/ClienteService.class
+org/educa/Main.class
