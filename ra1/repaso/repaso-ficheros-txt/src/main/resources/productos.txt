@@ -1,0 +1,5 @@
+1,Teclado Mecánico,4,45.50
+2,Ratón Inalámbrico,15,22.99
+3,Monitor 24 pulgadas,3,149.99
+4,Alfombrilla XL,25,12.50
+5,Cable HDMI 2m,8,9.99

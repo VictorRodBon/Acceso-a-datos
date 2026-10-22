@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<libreria>
+    <libro id="1">
+        <titulo>Cien años de soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anyo>1967</anyo>
+        <precio>18.50</precio>
+        <genero>Novela</genero>
+    </libro>
+    <libro id="2">
+        <titulo>El Hobbit</titulo>
+        <autor>J.R.R. Tolkien</autor>
+        <anyo>1937</anyo>
+        <precio>12.99</precio>
+        <genero>Fantasía</genero>
+    </libro>
+    <libro id="3">
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+        <anyo>1949</anyo>
+        <precio>11.50</precio>
+        <genero>Ciencia Ficción</genero>
+    </libro>
+    <libro id="4">
+        <titulo>Don Quijote de la Mancha</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <anyo>1605</anyo>
+        <precio>22.00</precio>
+        <genero>Clásico</genero>
+    </libro>
+    <libro id="5">
+        <titulo>Titulo</titulo>
+        <autor>Autor</autor>
+        <anyo>2005</anyo>
+        <precio>21.50</precio>
+        <genero></genero>
+    </libro>
+    <libro id="6">
+        <titulo>Elantris</titulo>
+        <autor>Brandon Sanderson</autor>
+        <anyo>2005</anyo>
+        <precio>12.00</precio>
+        <genero>Fantasía</genero>
+    </libro>
+</libreria>

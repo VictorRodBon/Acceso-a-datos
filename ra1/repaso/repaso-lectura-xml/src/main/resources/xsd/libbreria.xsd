@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definición del elemento raíz -->
+    <xs:element name="libreria">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo" type="xs:string"/>
+                            <xs:element name="autor" type="xs:string"/>
+                            <xs:element name="anyo" type="xs:integer"/>
+                            <xs:element name="precio" type="xs:decimal"/>
+                            <xs:element name="genero" type="xs:string"/>
+                        </xs:sequence>
+                        <!-- Atributo obligatorio para identificar cada libro -->
+                        <xs:attribute name="id" type="xs:int" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

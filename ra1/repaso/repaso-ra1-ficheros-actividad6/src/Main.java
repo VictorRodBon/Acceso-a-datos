@@ -18,5 +18,9 @@ public class Main {
         }else{
             System.err.println("error");
         }
+
+        // leer fichero resultante
+        System.out.println("========RASULTADO=======");
+        System.out.println(fs.leerInformacion());
     }
 }

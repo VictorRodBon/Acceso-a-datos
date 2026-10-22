@@ -15,6 +15,7 @@ public class FileService {
     public boolean escribirInformacion(String directoryPath) {
         File path = new File(directoryPath);
 
+
         // Veerificar si se ha pasado un directorio, en caso contrario se retorna FALSE
         if (!path.isDirectory()) {
             return false;
@@ -36,6 +37,14 @@ public class FileService {
 
         // Delegamos directamente el resultado booleano del DAO
         return daoImp.createFile(contenido.toString());
+    }
+
+    /**
+     * Solicita el contenido del fichero creado anteriormente
+     * @return retorna el contenido del fichero
+     */
+    public String leerInformacion(){
+        return daoImp.readFile();
     }
 
     private String obtenerPermisos(File f) {

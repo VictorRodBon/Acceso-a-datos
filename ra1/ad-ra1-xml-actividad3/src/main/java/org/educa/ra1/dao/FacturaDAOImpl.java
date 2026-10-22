@@ -4,7 +4,6 @@ import generated.Factura;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
-
 import java.io.File;
 
 public class FacturaDAOImpl implements FacturaDAO {
