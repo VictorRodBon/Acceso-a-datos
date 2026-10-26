@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="billetes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="billete"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="billete">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="pasajero"/>
+                <xs:element ref="vuelo"/>
+                <xs:element name="clase" type="clase"/>
+                <xs:element name="maletas" type="xs:int"/>
+                <xs:element name="precioBase" type="xs:decimal"/>
+                <xs:element name="precioFinal" type="xs:decimal"/>
+            </xs:sequence>
+            <xs:attribute name="localizador" use="required" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pasajero">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="dni" use="required" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="vuelo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="origen" type="xs:string"/>
+                <xs:element name="destino" type="xs:string"/>
+                <xs:element name="fecha" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="codigo" use="required" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="clase">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="TURISTA"/>
+            <xs:enumeration value="BUSINESS"/>
+            <xs:enumeration value="PRIMERA"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

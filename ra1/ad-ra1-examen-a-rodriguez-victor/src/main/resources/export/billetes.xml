@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<billetes>
+    <billete localizador="Q7X2LM">
+        <pasajero dni="12345678Z">Lucía Fernández Gómez</pasajero>
+        <vuelo codigo="IB3456">
+            <origen>MAD</origen>
+            <destino>LHR</destino>
+            <fecha>2026-11-20</fecha>
+        </vuelo>
+        <clase>TURISTA</clase>
+        <maletas>1</maletas>
+        <precioBase>89.90</precioBase>
+        <precioFinal>239.750</precioFinal>
+    </billete>
+    <billete localizador="B4K9PT">
+        <pasajero dni="87654321X">Andrés Molina Ruiz</pasajero>
+        <vuelo codigo="IB3456">
+            <origen>MAD</origen>
+            <destino>LHR</destino>
+            <fecha>2026-11-20</fecha>
+        </vuelo>
+        <clase>BUSINESS</clase>
+        <maletas>2</maletas>
+        <precioBase>89.90</precioBase>
+        <precioFinal>239.750</precioFinal>
+    </billete>
+    <billete localizador="Z1R8QW">
+        <pasajero dni="11111111H">Carmen Ortega Vidal</pasajero>
+        <vuelo codigo="UX1095">
+            <origen>MAD</origen>
+            <destino>JFK</destino>
+            <fecha>2026-11-22</fecha>
+        </vuelo>
+        <clase>PRIMERA</clase>
+        <maletas>3</maletas>
+        <precioBase>450.00</precioBase>
+        <precioFinal>1140.000</precioFinal>
+    </billete>
+    <billete localizador="M5T3NY">
+        <pasajero dni="22222222J">Javier Santos Prieto</pasajero>
+        <vuelo codigo="VY2201">
+            <origen>BCN</origen>
+            <destino>FCO</destino>
+            <fecha>2026-12-01</fecha>
+        </vuelo>
+        <clase>TURISTA</clase>
+        <maletas>0</maletas>
+        <precioBase>45.50</precioBase>
+        <precioFinal>128.750</precioFinal>
+    </billete>
+    <billete localizador="H8J2KD">
+        <pasajero dni="33333333P">Beatriz Alonso Marín</pasajero>
+        <vuelo codigo="VY2201">
+            <origen>BCN</origen>
+            <destino>FCO</destino>
+            <fecha>2026-12-01</fecha>
+        </vuelo>
+        <clase>PRIMERA</clase>
+        <maletas>0</maletas>
+        <precioBase>33.33</precioBase>
+        <precioFinal>98.325</precioFinal>
+    </billete>
+    <billete localizador="P6W4XC">
+        <pasajero dni="44444444A">Óscar Ramírez León</pasajero>
+        <vuelo codigo="UX1095">
+            <origen>MAD</origen>
+            <destino>JFK</destino>
+            <fecha>2026-11-22</fecha>
+        </vuelo>
+        <clase>BUSINESS</clase>
+        <maletas>0</maletas>
+        <precioBase>99.99</precioBase>
+        <precioFinal>264.975</precioFinal>
+    </billete>
+    <billete localizador="R3N7VB">
+        <pasajero dni="55555555K">Elena Castro Navarro</pasajero>
+        <vuelo codigo="VY2201">
+            <origen>BCN</origen>
+            <destino>FCO</destino>
+            <fecha>2026-12-01</fecha>
+        </vuelo>
+        <clase>BUSINESS</clase>
+        <maletas>1</maletas>
+        <precioBase>45.50</precioBase>
+        <precioFinal>128.750</precioFinal>
+    </billete>
+    <billete localizador="D9F1GS">
+        <pasajero dni="66666666Q">Daniel Herrera Soto</pasajero>
+        <vuelo codigo="IB3456">
+            <origen>MAD</origen>
+            <destino>LHR</destino>
+            <fecha>2026-11-20</fecha>
+        </vuelo>
+        <clase>PRIMERA</clase>
+        <maletas>1</maletas>
+        <precioBase>89.90</precioBase>
+        <precioFinal>239.750</precioFinal>
+    </billete>
+</billetes>
