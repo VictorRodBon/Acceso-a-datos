@@ -18,11 +18,5 @@ public class ClienteEntity {
     private String telefono;
 
     public ClienteEntity(String dni, String nombre, String pApellido, String sApellido, String email, String telefono) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.pApellido = pApellido;
-        this.sApellido = sApellido;
-        this.email = email;
-        this.telefono = telefono;
     }
 }
