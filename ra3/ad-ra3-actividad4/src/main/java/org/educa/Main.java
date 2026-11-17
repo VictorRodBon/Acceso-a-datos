@@ -14,6 +14,5 @@ public class Main {
             ClienteEntity cliente = clienteService.get(id);
             System.out.println(cliente.toString());
         }
-
     }
 }
