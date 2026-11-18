@@ -1,0 +1,2 @@
+# ACTIVIDAD 2
+Actualiza el estado a "MANTENIMIENTO" de todos los aviones cuyo consumo sea superior a 3500 y que pertenezcan al fabricante "Boening". Muestra por consola cuantos aviones han cambiado de estado.
