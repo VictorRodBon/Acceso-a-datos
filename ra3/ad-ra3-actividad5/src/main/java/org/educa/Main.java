@@ -35,6 +35,7 @@ public class Main {
                         break;
                     case 2:
                         System.out.println("Borrar");
+                        delete(sc, clienteService);
                         break;
                     case 3:
                         System.out.println("Actualizar");
@@ -66,7 +67,35 @@ public class Main {
         service.update(id, nombre);
     }
 
-    public static void delete(Scanner sc, ClienteService service){}
+    public static void delete(Scanner sc, ClienteService service) {
+        System.out.print("Introduce el id del usuario a eliminar: ");
+        int id = sc.nextInt();
+        sc.nextLine(); // Limpia el salto de línea pendiente tras nextInt()
+
+        ClienteEntity cliente = service.getById(id);
+        if (cliente == null) {
+            System.out.println("No se encontró ningún usuario con el ID: " + id);
+            return;
+        }
+
+        System.out.println(cliente);
+
+        String a;
+        do {
+            System.out.print("¿Seguro que quieres eliminar este usuario? (s/N): ");
+            a = sc.nextLine().trim();
+
+            if (a.equalsIgnoreCase("s")) {
+                service.delete(cliente);
+                System.out.println("Usuario eliminado correctamente.");
+                return;
+            } else if (a.equalsIgnoreCase("n") || a.isEmpty()) { // Por defecto 'N' al pulsar Enter
+                System.out.println("Operación cancelada.");
+                return;
+            }
+        } while (true);
+    }
+
 
     public static void crear(Scanner sc, ClienteService service){
         sc.nextLine();

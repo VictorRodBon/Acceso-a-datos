@@ -12,7 +12,7 @@ Crea un programa que permita crear, eliminar o actualizar lso datos de un client
 ## Actividad 6:
 Crea un programa que solicite los datos para incliur un nuevo modelo de avión.
 ## Actividad 7: 
-Solicita un id de billete y devuelve los datos del pasajero y los datos del vuelo, incluyendo los aeropuertos de progem y destino.
+Solicita un id de billete y devuelve los datos del pasajero y los datos del vuelo, incluyendo los aeropuertos de origen y destino.
 ## Actividad 8:
 Crea un programa que solicite un id de reserva y muestre por consola sus pasajeros, una vez mostrada la reserva podrá seleccionar un pasajero a eliminar.
 ## Actividad 9:

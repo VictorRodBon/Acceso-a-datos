@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 public class ClienteDAOImpl implements ClienteDAO {
     @Override
     public void crear(ClienteEntity cliente) {
-        try(Session session= HibernateConfiguration.getSessionFactory().openSession()){
+        try(Session session = HibernateConfiguration.getSessionFactory().openSession()){
             if (cliente!=null) {
                 session.beginTransaction();
                 session.persist(cliente);
@@ -22,8 +22,7 @@ public class ClienteDAOImpl implements ClienteDAO {
         Transaction tx = null;
         try (Session session = HibernateConfiguration.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-
-            ClienteEntity cliente = session.get(ClienteEntity.class, id);
+            ClienteEntity cliente = getById(id);
             if (cliente == null) {
                 System.out.println("No existe ningún cliente con el id " + id);
                 tx.rollback();
@@ -37,6 +36,22 @@ public class ClienteDAOImpl implements ClienteDAO {
                 tx.rollback();
             }
             throw e;
+        }
+    }
+
+    @Override
+    public ClienteEntity getById(int id) {
+        try(Session session = HibernateConfiguration.getSessionFactory().openSession()){
+            return session.get(ClienteEntity.class, id);
+        }
+    }
+
+    @Override
+    public void delete(ClienteEntity cliente) {
+        try (Session session = HibernateConfiguration.getSessionFactory().openSession()){
+            session.beginTransaction();
+            session.remove(cliente);
+            session.getTransaction().commit();
         }
     }
 }

@@ -13,4 +13,8 @@ public class ClienteService {
     public void update(int id, String nombre) {
         clienteDAO.update(id, nombre);
     }
+
+    public ClienteEntity getById(int id){ return clienteDAO.getById(id); }
+
+    public void delete(ClienteEntity cliente) { clienteDAO.delete(cliente); }
 }

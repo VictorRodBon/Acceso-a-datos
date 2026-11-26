@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 @Table(name="clientes")
 public class ClienteEntity {
@@ -30,6 +32,7 @@ public class ClienteEntity {
     @Column(name="telefono")
     private String telefono;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<ReservaEntity> reservas;
 }
