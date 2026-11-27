@@ -17,16 +17,22 @@ public class ClienteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_cliente")
     private Integer idCliente;
+
     @Column(name="dni")
     private String dni;
+
     @Column(name="nombre")
     private String nombre;
+
     @Column(name="p_apellido")
     private String pApellido;
+
     @Column(name="s_apellido")
     private String sApellido;
+
     @Column(name="email")
     private String email;
+
     @Column(name="telefono")
     private String telefono;
 

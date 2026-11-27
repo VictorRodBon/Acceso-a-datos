@@ -1,17 +1,20 @@
 package org.educa;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.educa.entity.BilleteEntity;
+import org.educa.service.ServicioBilletes;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        ServicioBilletes servicio = new ServicioBilletes();
+        try(Scanner sc = new Scanner(System.in)){
+            System.out.println("id del billete a buscar:");
+            int id = sc.nextInt();
+            BilleteEntity billete = servicio.getBilleteById(id);
+            System.out.println("id billete: " + billete.getIdBillete());
+            System.out.println("id vuelo: " + billete.getVuelo().getIdVuelo());
+            System.out.println("id pasajero: " + billete.getPasajero().getIdPasajero());
         }
     }
 }

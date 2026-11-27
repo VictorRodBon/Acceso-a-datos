@@ -20,14 +20,13 @@ public class ReservaEntity {
     @Column(name = "cod_reserva")
     private String codReserva;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cliente")
-    @ToString.Exclude // <-- ESTO ROMPE EL BUCLE INFINITO
-    private ClienteEntity cliente;
-
     @Column(name = "fec_reserva")
     private String fecReserva;
 
     @Column(name = "estado")
     private String estado;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cliente")
+    private ClienteEntity cliente;
 }
